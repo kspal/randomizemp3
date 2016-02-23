@@ -15,7 +15,7 @@ function trouveNomUnique($dirPath) {
 }
 
 
-
+//verifie les arguments
 if (!array_key_exists(1, $argv)) {
   echo "usage : randomizefile.php repertoire";
   exit();
@@ -27,6 +27,8 @@ if (!is_dir($repsrc)) {
   echo "Le répertoire ".$repsrc." n'existe pas.";
   exit();
 }
+
+//tout est ok 
 
 if (substr($repsrc, -1)!=DIRECTORY_SEPARATOR) {
   $repsrc=$repsrc.DIRECTORY_SEPARATOR;
