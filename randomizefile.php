@@ -1,4 +1,9 @@
 <?php
+/**
+ * [trouveNomUnique description]
+ * @param  [type] $dirPath [description]
+ * @return [type]          [description]
+ */
 function trouveNomUnique($dirPath) {
     do {
         $uniqueval=rand(1, 99999).".mp3";
@@ -37,6 +42,7 @@ if (!is_dir($repdst)) {
 array_map('unlink', glob($repdst.'*'));
 
 $tabfile=glob($repsrc."*.mp3");
+
 shuffle($tabfile);
 
 foreach ($tabfile as $filename) {    
@@ -48,6 +54,7 @@ foreach ($tabfile as $filename) {
 
       $randfile=trouveNomUnique($repdst);
 
+      //rewrite the file with the random name
       $fd = fopen($repdst.$randfile, "wb");
       fwrite($fd,$data,strlen($data));
       fclose($fd);  
