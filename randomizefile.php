@@ -18,24 +18,18 @@ if (!array_key_exists(1, $argv)) {
 
 $repsrc= $argv[1];
 
-
 if (!is_dir($repsrc)) {
   echo "Le répertoire ".$repsrc." n'existe pas.";
   exit();
 }
-
-
-
 
 if (substr($repsrc, -1)!=DIRECTORY_SEPARATOR) {
   $repsrc=$repsrc.DIRECTORY_SEPARATOR;
 }
 $repsrc=str_replace("\\", "\\\\", $repsrc);
 
-
-//"C:\\Users\\noodle\\Desktop\\music\\";
 $repdst= $repsrc.'randomized'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR;
-//$repdst=str_replace("\\", "/", $repdst);
+
 if (!is_dir($repdst)) {
   mkdir($repdst);
 }
